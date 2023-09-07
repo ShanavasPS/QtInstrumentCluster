@@ -28,5 +28,11 @@
         <file>NormalMode.qml</file>
         <file>StatusBar.qml</file>
         <file>Car.qml</file>
+        <file>LaneAssistWhiteLine.qml</file>
+        <file>images/lanes/white-line-left.png</file>
+        <file>images/lanes/white-line-right.png</file>
+        <file>LaneAssist.qml</file>
+        <file>images/lanes/red-border-left.png</file>
+        <file>images/lanes/red-border-right.png</file>
     </qresource>
 </RCC>

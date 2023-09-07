@@ -17,13 +17,6 @@ Window {
         y:16;
     }
 
-    Image {
-        id: topLine;
-        source: "images/top-line.png";
-        anchors.horizontalCenter: parent.horizontalCenter;
-        y: 62;
-    }
-
     Car {
         anchors.fill: parent;
     }
