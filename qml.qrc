@@ -34,5 +34,11 @@
         <file>LaneAssist.qml</file>
         <file>images/lanes/red-border-left.png</file>
         <file>images/lanes/red-border-right.png</file>
+        <file>Menu.qml</file>
+        <file>images/menu/navi.png</file>
+        <file>images/menu/phone.png</file>
+        <file>images/menu/play.png</file>
+        <file>images/menu/setup.png</file>
+        <file>models/NormalModeModel.qml</file>
     </qresource>
 </RCC>
