@@ -1,5 +1,11 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>images/top-line.png</file>
+        <file>images/gauges/gauge-frame.png</file>
+        <file>images/gauges/highlight-normal.png</file>
+        <file>Gauge.qml</file>
+        <file>images/gauges/needle-normal.png</file>
+        <file>images/bg-mask.png</file>
     </qresource>
 </RCC>
