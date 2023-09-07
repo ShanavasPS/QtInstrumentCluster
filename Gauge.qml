@@ -16,9 +16,9 @@ BaseGauge {
         model: 13;
         delegate: Text {
             id: entry
-            visible: index <= Math.ceil(maxValue / interval); // Ideally, the model would be dinamic and this not needed
+            visible: index <= Math.ceil(maxValue / interval); // Ideally, the model would be dynamic and this not needed
             property real angle: minAngle + 2 * Math.PI * index * interval / maxValue * (maxAngle - minAngle) / 360;
-            x: (root.width - width) / 2 + (root.left ? -1 : 1) * Math.sin(angle) * 135;
+            x: (root.width - width) / 2 + (root.leftOrientation ? -1 : 1) * Math.sin(angle) * 135;
             y: (root.height - height) / 2 + Math.cos(angle) * 135;
             text: index * interval;
             color: Style.lightPeriwinkle;

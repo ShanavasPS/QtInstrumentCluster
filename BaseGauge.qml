@@ -3,7 +3,7 @@ import QtQuick 2.12
 Item {
 
     id: root;
-    property bool leftOrientation: true;
+    property bool leftOrientation: false;
     property real value;
     property int minAngle: 0
     property int needleOffsetX: 0
@@ -31,71 +31,71 @@ Item {
     }
 
     Image {
-            id: bg;
-            width: implicitWidth
-            height: implicitHeight
-            anchors.centerIn: parent;
-            source: "images/gauges/gauge-frame.png"
-            transform: [
-                Scale {
-                    origin.x: bg.implicitWidth / 2;
-                    xScale: leftOrientation ? 1 : -1;
-                },
-                Scale {
-                    origin.x: transformOriginX - bg.x
-                    origin.y: 340 - bg.y
-                    xScale: root.scale
-                    yScale: root.scale
-                }
-            ]
-        }
+        id: bg;
+        width: implicitWidth
+        height: implicitHeight
+        anchors.centerIn: parent;
+        source: "images/gauges/gauge-frame.png"
+        transform: [
+            Scale {
+                origin.x: bg.implicitWidth / 2;
+                xScale: leftOrientation ? 1 : -1;
+            },
+            Scale {
+                origin.x: transformOriginX - bg.x
+                origin.y: 340 - bg.y
+                xScale: root.scale
+                yScale: root.scale
+            }
+        ]
+    }
 
     Image {
-            id: highlight
-            x: 112 + highlightOffsetX
-            y: -3 + highlightOffsetY
-            width: implicitWidth
-            height: implicitHeight
-            source: "images/gauges/highlight-normal.png"
+        id: highlight
+        x: 112 + highlightOffsetX
+        y: -3 + highlightOffsetY
+        width: implicitWidth
+        height: implicitHeight
+        source: "images/gauges/highlight-normal.png"
 
-            transform: [
-                Rotation {
-                    origin.x: 340 / 2 - highlight.x;
-                    origin.y: 340 / 2 - highlight.y - 0.5;
-                    angle: minAngle/0.0174532925 + 180 + animatedValue * (leftOrientation ? 1 : -1) * (maxAngle - minAngle) / maxValue
-                },
-                Scale {
-                    origin.x: transformOriginX - highlight.x
-                    origin.y: 340 - highlight.y - 0.5
-                    xScale: root.scale
-                    yScale: root.scale
-                },
-                Translate {
-                    y: 0.5
-                }
-            ]
-        }
+        transform: [
+            Rotation {
+                origin.x: 340 / 2 - highlight.x;
+                origin.y: 340 / 2 - highlight.y - 0.5;
+                angle: minAngle/0.0174532925 + 180 + animatedValue * (leftOrientation ? 1 : -1) * (maxAngle - minAngle) / maxValue
+            },
+            Scale {
+                origin.x: transformOriginX - highlight.x
+                origin.y: 340 - highlight.y - 0.5
+                xScale: root.scale
+                yScale: root.scale
+            },
+            Translate {
+                y: 0.5
+            }
+        ]
+    }
 
     Image {
-            id: needle
-            x: 171 - needle.width/2 + needleOffsetX
-            y: 16 + needleOffsetY
-            width: implicitWidth
-            height: implicitHeight
-            source: "images/gauges/needle-normal.png"
+        id: needle
+        x: 171 - needle.width/2 + needleOffsetX
+        y: 16 + needleOffsetY
+        width: implicitWidth
+        height: implicitHeight
+        source: "images/gauges/needle-normal.png"
 
-            transform: [
-                Rotation {
-                    origin.x: 340 / 2 - needle.x;
-                    origin.y: 340 / 2 - needle.y;
-                    angle: minAngle/0.0174532925 + 180 + animatedValue * (leftOrientation ? 1 : -1) * (maxAngle - minAngle) / maxValue
-                },
-                Scale {
-                    origin.x: transformOriginX - needle.x
-                    origin.y: 340 - needle.y
-                    xScale: root.scale
-                    yScale: root.scale
-                }
-            ]
-        }
+        transform: [
+            Rotation {
+                origin.x: 340 / 2 - needle.x;
+                origin.y: 340 / 2 - needle.y;
+                angle: minAngle/0.0174532925 + 180 + animatedValue * (leftOrientation ? 1 : -1) * (maxAngle - minAngle) / maxValue
+            },
+            Scale {
+                origin.x: transformOriginX - needle.x
+                origin.y: 340 - needle.y
+                xScale: root.scale
+                yScale: root.scale
+            }
+        ]
+    }
 }
