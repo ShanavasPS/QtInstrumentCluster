@@ -1,101 +1,90 @@
 import QtQuick 2.12
+import Style 1.0
 
-Item {
-
+BaseGauge {
     id: root;
-    property bool leftOrientation: true;
-    property real value;
-    property int minAngle: 0
-    property int needleOffsetX: 0
-    property int needleOffsetY: 0
-    property int highlightOffsetX: 0
-    property int highlightOffsetY: 0
-    property int maxValue : 1; // The maximum value shown in this gauge
-    property int maxAngle : 200; // The angle in degrees at which the needle is when the value is maxValue
-    property alias gaugeSource: bg.source;
-    property alias needleSource: needle.source
-    property alias highlightSource: highlight.source
+    property alias textLabel: label.text;
+    property alias valueText: textValue.text;
+    property real valueTextScale: 1;
+    property double labelOpacity: 1
+    property int labelHorizontalCenterOffset: 0
+    property int labelVerticalOffset: 0
+    property int valueVerticalCenterOffset: -7
+    property int valueHorizontalCenterOffset: 0
 
-    width: 340;
-    height: 340;
-
-    property int transformOriginX: leftOrientation ? 60 : 280
-
-    property real scale: 1;
-    property int interval: maxValue > 140 ? 20 : maxValue > 50 ? 10 : 1;
-    property real animatedValue: value;
-    Behavior on animatedValue { NumberAnimation {
-        easing.type: Easing.OutQuad;
-        duration: MainModel.gaugesValueChangeDuration;
+    Repeater {
+        model: 13;
+        delegate: Text {
+            id: entry
+            visible: index <= Math.ceil(maxValue / interval); // Ideally, the model would be dinamic and this not needed
+            property real angle: minAngle + 2 * Math.PI * index * interval / maxValue * (maxAngle - minAngle) / 360;
+            x: (root.width - width) / 2 + (root.left ? -1 : 1) * Math.sin(angle) * 135;
+            y: (root.height - height) / 2 + Math.cos(angle) * 135;
+            text: index * interval;
+            color: Style.lightPeriwinkle;
+            font.pixelSize: 12;
+            font.bold: false;
+            font.family: "Sarabun";
+            opacity: {
+                var distance = Math.abs(animatedValue/interval - index);
+                var alphaResult = 1.5 - (distance / 1.25);
+                return Math.min(Math.max(alphaResult, 0), 1);
+            }
+            Behavior on opacity { NumberAnimation { duration: 150; } }
+            transform: Scale {
+                origin.x: transformOriginX - entry.x
+                origin.y: 340 - entry.y
+                xScale: root.scale
+                yScale: root.scale
+            }
         }
     }
 
-    Image {
-            id: bg;
-            width: implicitWidth
-            height: implicitHeight
-            anchors.centerIn: parent;
-            source: "images/gauges/gauge-frame.png"
-            transform: [
-                Scale {
-                    origin.x: bg.implicitWidth / 2;
-                    xScale: leftOrientation ? 1 : -1;
-                },
-                Scale {
-                    origin.x: transformOriginX - bg.x
-                    origin.y: 340 - bg.y
-                    xScale: root.scale
-                    yScale: root.scale
-                }
-            ]
+    Text {
+        id: textValue
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: valueVerticalCenterOffset
+        anchors.horizontalCenterOffset: valueHorizontalCenterOffset
+        opacity: labelOpacity
+        horizontalAlignment: Text.AlignHCenter
+        text: animatedValue.toFixed(0);
+        color: Style.lightPeriwinkle;
+        font.pixelSize: 64;
+        font.bold: true;
+        font.family: "Sarabun";
+        transform: [
+            Scale {
+                origin.x: transformOriginX - textValue.x
+                origin.y: 340 - textValue.y
+                xScale: root.scale
+                yScale: root.scale
+            },
+            Scale {
+                origin.x: textValue.width / 2
+                origin.y: textValue.height / 2
+                xScale: valueTextScale
+                yScale: valueTextScale
+            }
+        ]
+    }
+
+    Text {
+        id: label
+        horizontalAlignment: Text.AlignHCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: labelHorizontalCenterOffset
+        anchors.topMargin: labelVerticalOffset
+        anchors.top: textValue.bottom;
+        opacity: labelOpacity
+        color: Style.lightPeriwinkle;
+        font.pixelSize: 16;
+        font.bold: false;
+        font.family: "Sarabun";
+        transform: Scale {
+            origin.x: transformOriginX - label.x
+            origin.y: 340 - label.y
+            xScale: root.scale
+            yScale: root.scale
         }
-
-    Image {
-            id: highlight
-            x: 112 + highlightOffsetX
-            y: -3 + highlightOffsetY
-            width: implicitWidth
-            height: implicitHeight
-            source: "images/gauges/highlight-normal.png"
-
-            transform: [
-                Rotation {
-                    origin.x: 340 / 2 - highlight.x;
-                    origin.y: 340 / 2 - highlight.y - 0.5;
-                    angle: minAngle/0.0174532925 + 180 + animatedValue * (leftOrientation ? 1 : -1) * (maxAngle - minAngle) / maxValue
-                },
-                Scale {
-                    origin.x: transformOriginX - highlight.x
-                    origin.y: 340 - highlight.y - 0.5
-                    xScale: root.scale
-                    yScale: root.scale
-                },
-                Translate {
-                    y: 0.5
-                }
-            ]
-        }
-
-    Image {
-            id: needle
-            x: 171 - needle.width/2 + needleOffsetX
-            y: 16 + needleOffsetY
-            width: implicitWidth
-            height: implicitHeight
-            source: "images/gauges/needle-normal.png"
-
-            transform: [
-                Rotation {
-                    origin.x: 340 / 2 - needle.x;
-                    origin.y: 340 / 2 - needle.y;
-                    angle: minAngle/0.0174532925 + 180 + animatedValue * (leftOrientation ? 1 : -1) * (maxAngle - minAngle) / maxValue
-                },
-                Scale {
-                    origin.x: transformOriginX - needle.x
-                    origin.y: 340 - needle.y
-                    xScale: root.scale
-                    yScale: root.scale
-                }
-            ]
-        }
+    }
 }

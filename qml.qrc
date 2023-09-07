@@ -40,5 +40,6 @@
         <file>images/menu/play.png</file>
         <file>images/menu/setup.png</file>
         <file>models/NormalModeModel.qml</file>
+        <file>BaseGauge.qml</file>
     </qresource>
 </RCC>
