@@ -7,5 +7,23 @@
         <file>Gauge.qml</file>
         <file>images/gauges/needle-normal.png</file>
         <file>images/bg-mask.png</file>
+        <file>images/car-highlights.png</file>
+        <file>TellTales.qml</file>
+        <file>TellTalesIndicator.qml</file>
+        <file>images/telltales/airbag.png</file>
+        <file>images/telltales/beam.png</file>
+        <file>images/telltales/high-beams.png</file>
+        <file>images/telltales/parked.png</file>
+        <file>images/telltales/ready.png</file>
+        <file>images/telltales/turn_left.png</file>
+        <file>images/telltales/turn_right.png</file>
+        <file>models/TellTalesModel.qml</file>
+        <file>LinearGauge.qml</file>
+        <file>images/status/battery.png</file>
+        <file>images/status/fuel.png</file>
+        <file>models/MainModel.qml</file>
+        <file>models/Style.qml</file>
+        <file>models/Units.qml</file>
+        <file>models/SpeedLimitValues.qml</file>
     </qresource>
 </RCC>
