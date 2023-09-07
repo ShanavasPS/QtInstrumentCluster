@@ -25,5 +25,8 @@
         <file>models/Style.qml</file>
         <file>models/Units.qml</file>
         <file>models/SpeedLimitValues.qml</file>
+        <file>NormalMode.qml</file>
+        <file>StatusBar.qml</file>
+        <file>Car.qml</file>
     </qresource>
 </RCC>
