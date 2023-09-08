@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import MainModel 1.0
 import NormalModeModel 1.0
+import SimulationController 1.0
+import Drivetrain 1.0
 
 Window {
     id: window;
@@ -35,12 +37,28 @@ Window {
             anchors.fill: parent;
         }
 
+        SimulationController {
+            id: simulationController
+
+            onSpeedChanged: {
+                //console.log("Hi Back from C++ inside SimulationController")
+            }
+        }
+
+        DriveTrain {
+            id: driveTrain
+
+            onSpeedChanged: {
+                console.log("Hi Back from C++")
+            }
+        }
+
         Timer {
             interval: 50
             running: true
             repeat: true
             onTriggered: {
-                //ConnectivityService.sendHeartBeat()
+                simulationController.update();
             }
         }
 

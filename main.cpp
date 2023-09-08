@@ -4,6 +4,9 @@
 #include <QLocale>
 #include <QTranslator>
 
+#include "simulationcontroller.h"
+#include "DriveTrain.h"
+
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -20,6 +23,10 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
+    qmlRegisterType<SimulationController>("SimulationController", 1, 0, "SimulationController");
+
+    qmlRegisterType<Drivetrain>("Drivetrain", 1, 0, "DriveTrain");
 
     qmlRegisterSingletonType(QUrl("qrc:///models/TellTalesModel.qml"), "TellTalesModel", 1, 0, "TellTalesModel");
     qmlRegisterSingletonType(QUrl("qrc:///models/MainModel.qml"), "MainModel", 1, 0, "MainModel");

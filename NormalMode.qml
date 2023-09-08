@@ -27,10 +27,8 @@ Item {
         y: 44;
         leftOrientation: true;
         value: Units.kilometersToLongDistanceUnit(MainModel.speed)
-                    maxValue: Units.maximumSpeed
-                    textLabel: Units.speedUnit
-
-
+        maxValue: Units.maximumSpeed
+        textLabel: Units.speedUnit
     }
 
     Gauge {
