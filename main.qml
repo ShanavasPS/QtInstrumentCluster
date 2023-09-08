@@ -53,6 +53,7 @@ Window {
             onTriggered: {
                 simulationController.update();
                 MainModel.speed = MainModelData.speed
+                MainModel.rpm = MainModelData.rpm
             }
         }
 

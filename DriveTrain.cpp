@@ -118,6 +118,8 @@ void Drivetrain::shiftGear(int delta)
     _data.gear += delta;
     assert(_data.gear >= 0 && _data.gear < _config.gearNum);
     _data.rpm = getRpm(_data.speed, _data.gear);
+    MainModel* mainModel = MainModel::instance();
+    mainModel->setRPM(_data.rpm);
 }
 
 void Drivetrain::updateSpeed()
