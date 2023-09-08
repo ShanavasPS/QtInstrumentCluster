@@ -17,16 +17,6 @@ void SimulationController::start()
     timer->start(500);
 }
 
-void SimulationController::startInteractiveMode()
-{
-
-}
-
-void SimulationController::stopInteractiveMode()
-{
-    // Your C++ function logic here
-}
-
 void SimulationController::update()
 {
     const Drivetrain::DriveData &data = driveState.drivetrain.getDriveData();
@@ -35,11 +25,4 @@ void SimulationController::update()
     mainModel->setSpeed(data.speed);
     mainModel->setOdo(data.odo);
     mainModel->setRange(data.range);
-    /*mainModel.speed.setValue(data.speed);
-    mainModel.rpm.setValue(data.rpm);
-    mainModel.odo.setValue(int(data.odo));
-    mainModel.batteryLevel.setValue(data.battery);
-    mainModel.temp.setValue(data.coolantTemp);
-    mainModel.range.setValue(int(data.range));
-    mainModel->fuelLevel.setValue(data.fuel);*/
 }

@@ -47,30 +47,4 @@ QtObject {
 
     signal triggerLaneAssist(int side)
     signal triggerGuideArrow(int index)
-
-    onClusterModeChanged : {
-        if (MainModel.introSequenceCompleted) {
-            if (clusterMode === MainModel.ModeNormal) {
-                ConnectivityService.clusterMode = ConnectivityService.NormalMode
-            }
-            else {
-                ConnectivityService.clusterMode = ConnectivityService.SportMode
-                ConnectivityService.currentMenu = ConnectivityService.None
-            }
-            SettingsMenuModel.notifyConnectivityService()
-        }
-    }
-
-    onIntroSequenceStartedChanged: {
-        if (introSequenceStarted) {
-            ConnectivityService.clusterMode = ConnectivityService.IntroMode;
-        }
-    }
-
-    onIntroSequenceCompletedChanged: {
-        if (introSequenceCompleted) {
-            ConnectivityService.clusterMode = ConnectivityService.NormalMode;
-            ConnectivityService.currentMenu = ConnectivityService.Media;
-        }
-    }
 }

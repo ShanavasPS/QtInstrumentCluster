@@ -36,21 +36,4 @@ QtObject {
             menu = NormalModeModel.PhoneMenu
         }
     }
-
-    onMenuChanged: {
-        if (MainModel.introSequenceCompleted) {
-            if (menu === NormalModeModel.MediaPlayerMenu) {
-                ConnectivityService.currentMenu = ConnectivityService.Media
-            }
-            if (menu === NormalModeModel.NavigationMenu) {
-                ConnectivityService.currentMenu = ConnectivityService.Navigation
-            }
-            if (menu === NormalModeModel.PhoneMenu) {
-                ConnectivityService.currentMenu = ConnectivityService.Phone
-            }
-            if (menu === NormalModeModel.CarStatusMenu) {
-                SettingsMenuModel.notifyConnectivityService()
-            }
-        }
-    }
 }

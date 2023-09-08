@@ -40,10 +40,6 @@ Window {
 
         SimulationController {
             id: simulationController
-
-            onSpeedChanged: {
-                console.log("Hi Back from C++ inside SimulationController")
-            }
         }
 
         Timer {
@@ -56,22 +52,8 @@ Window {
                 MainModel.rpm = MainModelData.rpm
                 MainModel.odo = MainModelData.odo
                 MainModel.range = MainModelData.range
+                MainModel.gearShiftText = MainModelData.odo === 0 ? "P" : "D"
             }
-        }
-
-        Timer {
-            id: inactivityTimer
-            interval: 10000
-            running: false
-            repeat: false
-            onTriggered: {
-                simulationController.stopInteractiveMode()
-            }
-        }
-
-        function enterInteractiveMode() {
-            simulationController.startInteractiveMode();
-            inactivityTimer.restart()
         }
 
         function onKeyPressed(key : int) {
@@ -80,13 +62,6 @@ Window {
             } else if (key === Qt.Key_Left) {
                 NormalModeModel.previousMenu()
             }
-        }
-
-        function onKeyReleased(key : int) {
-            if (!MainModel.introSequenceCompleted) {
-                return
-            }
-            enterInteractiveMode()
         }
 
         Keys.onPressed: (event)=> { onKeyPressed(event.key) }

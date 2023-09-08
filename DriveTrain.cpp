@@ -23,7 +23,6 @@
 #include <assert.h>
 #include <algorithm>
 #include <cmath>
-#include "mainmodel.h"
 
 namespace {
 const float cmPerMinuteToKmhRatio = 0.0006;
