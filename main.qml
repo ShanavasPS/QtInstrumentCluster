@@ -6,6 +6,7 @@ import SimulationController 1.0
 import Drivetrain 1.0
 import MainModelData 1.0
 import TellTalesModel 1.0
+import MediaPlayerModel 1.0
 
 Window {
     id: window;
@@ -59,14 +60,13 @@ Window {
 
         function onKeyPressed(key : int) {
             if (key === Qt.Key_Right) {
-                NormalModeModel.nextMenu()
+                MediaPlayerModel.nextSong()
             } else if (key === Qt.Key_Left) {
-                NormalModeModel.previousMenu()
+                MediaPlayerModel.previousSong()
             }
         }
 
         Keys.onPressed: (event)=> { onKeyPressed(event.key) }
-        Keys.onReleased: (event)=> { onKeyReleased(event.key) }
 
         Component.onCompleted: {
             simulationController.start()

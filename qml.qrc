@@ -41,5 +41,13 @@
         <file>images/menu/setup.png</file>
         <file>models/NormalModeModel.qml</file>
         <file>BaseGauge.qml</file>
+        <file>MediaPlayer.qml</file>
+        <file>NormalModeContentItem.qml</file>
+        <file>images/albums/ak.png</file>
+        <file>images/albums/juno.png</file>
+        <file>images/albums/phazz.png</file>
+        <file>images/albums/thievery-corp.png</file>
+        <file>images/albums/tycho.png</file>
+        <file>models/MediaPlayerModel.qml</file>
     </qresource>
 </RCC>

@@ -21,6 +21,16 @@ Item {
         scale: root.scale
     }
 
+    Item {
+        id: mainElement;
+        anchors.fill: parent
+        MediaPlayer {
+            activeMode: active;
+            selected: true;//menu == NormalModeModel.MediaPlayerMenu;
+            anchors.fill: parent;
+        }
+    }
+
     Gauge {
         id: leftGauge;
         x: 20;
