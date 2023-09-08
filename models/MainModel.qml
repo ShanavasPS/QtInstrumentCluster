@@ -43,7 +43,7 @@ QtObject {
     readonly property int gaugesValueChangeDurationSlow: 1250
     property int gaugesValueChangeDuration: gaugesValueChangeDurationNormal
 
-    property bool laneAssistCarMoving: false
+    property bool laneAssistCarMoving: true
 
     signal triggerLaneAssist(int side)
     signal triggerGuideArrow(int index)

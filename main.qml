@@ -5,6 +5,7 @@ import NormalModeModel 1.0
 import SimulationController 1.0
 import Drivetrain 1.0
 import MainModelData 1.0
+import TellTalesModel 1.0
 
 Window {
     id: window;
@@ -43,16 +44,16 @@ Window {
         }
 
         Timer {
-            interval: 50
+            interval: 500
             running: true
             repeat: true
             onTriggered: {
                 simulationController.update();
+                TellTalesModel.qtLogoOpacity = 0
                 MainModel.speed = MainModelData.speed
                 MainModel.rpm = MainModelData.rpm
                 MainModel.odo = MainModelData.odo
                 MainModel.range = MainModelData.range
-                MainModel.gearShiftText = MainModelData.odo === 0 ? "P" : "D"
             }
         }
 
@@ -69,6 +70,7 @@ Window {
 
         Component.onCompleted: {
             simulationController.start()
+            TellTalesModel.qtLogoOpacity = 1
         }
     }
 

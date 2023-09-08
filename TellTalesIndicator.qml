@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import Style 1.0
+import TellTalesModel 1.0
 
 Item {
     id: indicator

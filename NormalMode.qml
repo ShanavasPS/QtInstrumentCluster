@@ -37,7 +37,7 @@ Item {
         y: 44;
         leftOrientation: false;
         value: MainModel.rpm / 1000;
-        valueText: MainModel.gearShiftText
+        valueText: MainModel.speed === 0 ? "P" : "D"
         maxValue: MainModel.maxRpm / 1000;
         maxAngle: 180
         textLabel: ""
