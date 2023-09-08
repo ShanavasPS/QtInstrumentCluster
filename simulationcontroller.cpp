@@ -1,5 +1,6 @@
 #include "simulationcontroller.h"
 #include "qdebug.h"
+#include "mainmodel.h"
 
 SimulationController::SimulationController(QObject *parent) : QObject(parent)
 {
@@ -8,26 +9,17 @@ SimulationController::SimulationController(QObject *parent) : QObject(parent)
 }
 
 void SimulationController::onTimerTimeout() {
-    driveState.onUpdate(500 * 0.1);
+    driveState.onUpdate(500);
 }
 
 void SimulationController::start()
 {
-    timer->start(500 * 0.1);
+    timer->start(500);
 }
 
 void SimulationController::startInteractiveMode()
 {
-    /*
-    const Simulation::Drivetrain::DriveData &data = drivetrain.getDriveData();
-    mainModel.speed.setValue(data.speed);
-    mainModel.rpm.setValue(data.rpm);
-    mainModel.odo.setValue(int(data.odo));
-    mainModel.batteryLevel.setValue(data.battery);
-    mainModel.temp.setValue(data.coolantTemp);
-    mainModel.range.setValue(int(data.range));
-    mainModel.fuelLevel.setValue(data.fuel);
-    */
+
 }
 
 void SimulationController::stopInteractiveMode()
@@ -37,6 +29,17 @@ void SimulationController::stopInteractiveMode()
 
 void SimulationController::update()
 {
-    // Check if the timer is running
-   //emit speedChanged();
+    const Drivetrain::DriveData &data = driveState.drivetrain.getDriveData();
+    MainModel* mainModel = MainModel::instance();
+    mainModel->setRPM(data.rpm);
+    mainModel->setSpeed(data.speed);
+    mainModel->setOdo(data.odo);
+    mainModel->setRange(data.range);
+    /*mainModel.speed.setValue(data.speed);
+    mainModel.rpm.setValue(data.rpm);
+    mainModel.odo.setValue(int(data.odo));
+    mainModel.batteryLevel.setValue(data.battery);
+    mainModel.temp.setValue(data.coolantTemp);
+    mainModel.range.setValue(int(data.range));
+    mainModel->fuelLevel.setValue(data.fuel);*/
 }

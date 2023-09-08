@@ -1,6 +1,7 @@
 pragma Singleton
 import QtQuick 2.15
 import Units 1.0
+import MainModelData 1.0
 
 QtObject {
     id: mainmodel

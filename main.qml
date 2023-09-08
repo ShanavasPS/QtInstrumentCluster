@@ -54,6 +54,8 @@ Window {
                 simulationController.update();
                 MainModel.speed = MainModelData.speed
                 MainModel.rpm = MainModelData.rpm
+                MainModel.odo = MainModelData.odo
+                MainModel.range = MainModelData.range
             }
         }
 

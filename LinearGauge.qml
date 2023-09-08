@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import Style 1.0
+import MainModel 1.0
 
 Item {
     property alias image: img.source
