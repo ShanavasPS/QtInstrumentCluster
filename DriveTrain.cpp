@@ -23,6 +23,7 @@
 #include <assert.h>
 #include <algorithm>
 #include <cmath>
+#include "mainmodel.h"
 
 namespace {
 const float cmPerMinuteToKmhRatio = 0.0006;
@@ -36,7 +37,7 @@ Drivetrain::Drivetrain(QObject *parent)
     reset();
 }
 
-void Drivetrain::udpate(uint32_t tick, float acceleration)
+void Drivetrain::update(uint32_t tick, float acceleration)
 {
     const float prevRpm = updateRpm(tick, acceleration);
     updateGearShift(tick, prevRpm, acceleration);
@@ -72,7 +73,7 @@ void Drivetrain::udpateCruiseControll(uint32_t tick, float targetSpeed)
             acceleration = -(0.05f + std::min(std::max(speedFactor * 4, 0.f), 1.f) * 0.95f);
         }
     }
-    udpate(tick, acceleration);
+    update(tick, acceleration);
 }
 
 float Drivetrain::updateRpm(uint32_t tick, float acceleration)
@@ -121,10 +122,9 @@ void Drivetrain::shiftGear(int delta)
 
 void Drivetrain::updateSpeed()
 {
-    //qDebug() << "Drivetrain::updateSpeed called:";
     _data.speed = getSpeed(_data.rpm, _data.gear);
-    //qDebug() << _data.speed;
-    emit speedChanged();
+    MainModel* mainModel = MainModel::instance();
+    mainModel->setSpeed(_data.speed);
 }
 
 void Drivetrain::updateOdo(uint32_t tick)

@@ -3,11 +3,8 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
-#include "DriveTrain.h"
 #include "mathutils.h"
 #include "qdebug.h"
-
-Drivetrain drivetrain = Drivetrain();
 
 namespace CommonDriveConstants {
 const uint16_t DelayDriveAfterModeChange = 1500;
@@ -40,7 +37,7 @@ void DriveState::updateDrivetrain(uint32_t tick, float acceleration)
 {
     using namespace CommonDriveConstants;
     _acceleration = AcceChangeFilteringFactor * acceleration + (1 - AcceChangeFilteringFactor) * _acceleration;
-    drivetrain.udpate(tick, _acceleration);
+    drivetrain.update(tick, _acceleration);
 }
 
 void DriveState::onUpdate(uint32_t tick)

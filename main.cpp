@@ -6,6 +6,7 @@
 
 #include "simulationcontroller.h"
 #include "DriveTrain.h"
+#include "mainmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -25,8 +26,11 @@ int main(int argc, char *argv[])
     }
 
     qmlRegisterType<SimulationController>("SimulationController", 1, 0, "SimulationController");
-
     qmlRegisterType<Drivetrain>("Drivetrain", 1, 0, "DriveTrain");
+
+    qmlRegisterSingletonType<MainModel>("MainModelData", 1, 0, "MainModelData", [](QQmlEngine*, QJSEngine*) -> QObject* {
+            return MainModel::instance();
+        });
 
     qmlRegisterSingletonType(QUrl("qrc:///models/TellTalesModel.qml"), "TellTalesModel", 1, 0, "TellTalesModel");
     qmlRegisterSingletonType(QUrl("qrc:///models/MainModel.qml"), "MainModel", 1, 0, "MainModel");

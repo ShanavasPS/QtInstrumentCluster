@@ -8,6 +8,7 @@ SOURCES += \
         DriveState.cpp \
         DriveTrain.cpp \
         main.cpp \
+        mainmodel.cpp \
         simulationcontroller.cpp
 
 RESOURCES += qml.qrc
@@ -31,5 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     DriveState.h \
     DriveTrain.h \
+    mainmodel.h \
     mathutils.h \
     simulationcontroller.h

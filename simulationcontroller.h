@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include "DriveState.h"
+#include <QTimer>
 
 struct SimulationController : public QObject
 {
@@ -16,12 +17,14 @@ public slots:
     void startInteractiveMode();
     void stopInteractiveMode();
     void update();
+    void onTimerTimeout();
 
 signals:
     void speedChanged();
 private:
     void randomizeAccChange();
     DriveState driveState;
+    QTimer *timer;
 };
 
 #endif // SIMULATIONCONTROLLER_H

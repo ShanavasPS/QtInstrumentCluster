@@ -3,12 +3,17 @@
 
 SimulationController::SimulationController(QObject *parent) : QObject(parent)
 {
-    driveState = DriveState();
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimerTimeout()));
+}
+
+void SimulationController::onTimerTimeout() {
+    driveState.onUpdate(500 * 0.1);
 }
 
 void SimulationController::start()
 {
-    // Your C++ function logic here
+    timer->start(500 * 0.1);
 }
 
 void SimulationController::startInteractiveMode()
@@ -32,7 +37,6 @@ void SimulationController::stopInteractiveMode()
 
 void SimulationController::update()
 {
-    driveState.onUpdate(500 * 0.1);
-
-   emit speedChanged();
+    // Check if the timer is running
+   //emit speedChanged();
 }

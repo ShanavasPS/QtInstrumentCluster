@@ -1,4 +1,5 @@
 import QtQuick 2.12
+import MainModel 1.0
 
 Item {
 

@@ -3,6 +3,8 @@
 
 
 #include <cstdint>
+#include "DriveTrain.h"
+
 class DriveState
 {
 public:
@@ -20,6 +22,8 @@ public:
     float _acceleration;
     uint64_t _cumulatedTime;
     bool _comesFromDriveState;
+    Drivetrain drivetrain = Drivetrain();
+
 };
 
 #endif // DRIVESTATE_H

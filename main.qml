@@ -4,6 +4,7 @@ import MainModel 1.0
 import NormalModeModel 1.0
 import SimulationController 1.0
 import Drivetrain 1.0
+import MainModelData 1.0
 
 Window {
     id: window;
@@ -41,15 +42,7 @@ Window {
             id: simulationController
 
             onSpeedChanged: {
-                //console.log("Hi Back from C++ inside SimulationController")
-            }
-        }
-
-        DriveTrain {
-            id: driveTrain
-
-            onSpeedChanged: {
-                console.log("Hi Back from C++")
+                console.log("Hi Back from C++ inside SimulationController")
             }
         }
 
@@ -59,6 +52,7 @@ Window {
             repeat: true
             onTriggered: {
                 simulationController.update();
+                MainModel.speed = MainModelData.speed
             }
         }
 

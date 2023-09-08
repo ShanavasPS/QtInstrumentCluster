@@ -71,7 +71,7 @@ public:
     };
 
     Drivetrain(QObject *parent = nullptr);
-    void udpate(uint32_t tick, float acceleration);
+    void update(uint32_t tick, float acceleration);
     void udpateCruiseControll(uint32_t tick, float targetSpeed);
     void reset();
     void resetOdo(float value = 0);
