@@ -1,5 +1,6 @@
 pragma Singleton
 import QtQuick 2.15
+import MainModel 1.0
 
 QtObject {
     id: mediaplayermodel
@@ -42,7 +43,7 @@ QtObject {
     }
 
     property Timer timePassedTimer: Timer {
-        running: mediaplayermodel.mediaPlayback
+        running: MainModel.simulationRunning
         repeat: true
         interval: 1000
         onTriggered: { timePassed += 1 }

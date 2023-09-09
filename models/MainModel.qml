@@ -45,7 +45,7 @@ QtObject {
     readonly property int gaugesValueChangeDurationSlow: 1250
     property int gaugesValueChangeDuration: gaugesValueChangeDurationNormal
 
-    property bool laneAssistCarMoving: true
+    property bool laneAssistCarMoving: simulationRunning
 
     Component.onCompleted: {
         MainModelData.modelUpdated.connect(modelUpdated);
