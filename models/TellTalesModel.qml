@@ -15,6 +15,6 @@ QtObject {
     property bool turnRightBlinking: true;
 
     readonly property int opacityChangeDuration: 500;
-    property double qtLogoOpacity: 0;
+    property double qtLogoOpacity: 1;
     property double indicatorOpacity: 1;
 }

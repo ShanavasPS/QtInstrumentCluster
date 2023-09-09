@@ -53,7 +53,6 @@ Window {
 
         Component.onCompleted: {
             simulationController.start()
-            TellTalesModel.qtLogoOpacity = 1
         }
     }
 }
