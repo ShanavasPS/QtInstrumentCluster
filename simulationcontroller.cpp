@@ -1,5 +1,4 @@
 #include "simulationcontroller.h"
-#include "qdebug.h"
 #include "mainmodel.h"
 
 SimulationController::SimulationController(QObject *parent) : QObject(parent)
@@ -22,9 +21,5 @@ void SimulationController::update()
 {
     const Drivetrain::DriveData &data = driveState.drivetrain.getDriveData();
     MainModel* mainModel = MainModel::instance();
-    mainModel->setRPM(data.rpm);
-    mainModel->setSpeed(data.speed);
-    mainModel->setOdo(data.odo);
-    mainModel->setRange(data.range);
-    emit driveUpdated();
+    mainModel->update(data);
 }

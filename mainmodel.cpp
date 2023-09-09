@@ -33,7 +33,6 @@ float MainModel::range() const
 void MainModel::setSpeed(float newValue) {
     if (m_speed != newValue) {
         m_speed = newValue;
-        emit speedChanged();
     }
 }
 
@@ -53,4 +52,12 @@ void MainModel::setRange(float newValue) {
     if (m_range != newValue) {
         m_range = newValue;
     }
+}
+
+void MainModel::update(const Drivetrain::DriveData &data) {
+    setRPM(data.rpm);
+    setSpeed(data.speed);
+    setOdo(data.odo);
+    setRange(data.range);
+    emit modelUpdated();
 }

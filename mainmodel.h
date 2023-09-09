@@ -2,6 +2,7 @@
 #define MAINMODEL_H
 
 #include <QObject>
+#include "DriveTrain.h"
 
 class MainModel : public QObject
 {
@@ -21,9 +22,10 @@ public:
     void setRPM(float newValue);
     void setOdo(float newValue);
     void setRange(float newValue);
+    void update(const Drivetrain::DriveData &data);
 
 signals:
-    void speedChanged();
+    void modelUpdated();
 
 private:
     explicit MainModel(QObject* parent = nullptr);

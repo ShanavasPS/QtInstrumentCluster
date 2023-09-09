@@ -3,7 +3,6 @@ import NormalModeModel 1.0
 import Style 1.0
 import MainModel 1.0
 import Units 1.0
-import MainModelData 1.0
 
 Item {
     id: root;

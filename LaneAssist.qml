@@ -73,19 +73,6 @@ Item {
         }
     }
 
-    // workaround for bug UL-420, to make Connections below work
-    property int dummy: MainModel.odo
-
-    Connections {
-        target: MainModel
-        function onTriggerLaneAssist() {
-            leftLaneAssist.visible = side === 0;
-            rightLaneAssist.visible = side === 1;
-            if (side === 0 || side === 1)
-                laneAssistAnimation.start()
-        }
-    }
-
     LaneAssistWhiteLine {
         t: t0
         scale: laneAssist.scale

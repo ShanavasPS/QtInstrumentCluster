@@ -2,6 +2,7 @@ pragma Singleton
 import QtQuick 2.15
 import Units 1.0
 import MainModelData 1.0
+import QtQuick.Controls 2.15
 
 QtObject {
     id: mainmodel
@@ -45,6 +46,15 @@ QtObject {
 
     property bool laneAssistCarMoving: true
 
-    signal triggerLaneAssist(int side)
-    signal triggerGuideArrow(int index)
+    Component.onCompleted: {
+        MainModelData.modelUpdated.connect(modelUpdated);
+    }
+
+    function modelUpdated(){
+        TellTalesModel.qtLogoOpacity = 0
+        MainModel.speed = MainModelData.speed
+        MainModel.rpm = MainModelData.rpm
+        MainModel.odo = MainModelData.odo
+        MainModel.range = MainModelData.range
+    }
 }

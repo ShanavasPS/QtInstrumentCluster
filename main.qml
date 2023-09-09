@@ -1,11 +1,8 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
+
 import MainModel 1.0
-import NormalModeModel 1.0
 import SimulationController 1.0
-import Drivetrain 1.0
-import MainModelData 1.0
-import TellTalesModel 1.0
 import MediaPlayerModel 1.0
 
 Window {
@@ -42,14 +39,6 @@ Window {
 
         SimulationController {
             id: simulationController
-
-            onDriveUpdated: {
-                TellTalesModel.qtLogoOpacity = 0
-                MainModel.speed = MainModelData.speed
-                MainModel.rpm = MainModelData.rpm
-                MainModel.odo = MainModelData.odo
-                MainModel.range = MainModelData.range
-            }
         }
 
         function onKeyPressed(key : int) {
