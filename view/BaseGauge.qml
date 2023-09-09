@@ -36,7 +36,7 @@ Item {
         width: implicitWidth
         height: implicitHeight
         anchors.centerIn: parent;
-        source: "images/gauges/gauge-frame.png"
+        source: "qrc:/images/gauges/gauge-frame.png"
         transform: [
             Scale {
                 origin.x: bg.implicitWidth / 2;
@@ -57,7 +57,7 @@ Item {
         y: -3 + highlightOffsetY
         width: implicitWidth
         height: implicitHeight
-        source: "images/gauges/highlight-normal.png"
+        source: "qrc:/images/gauges/highlight-normal.png"
 
         transform: [
             Rotation {
@@ -83,7 +83,7 @@ Item {
         y: 16 + needleOffsetY
         width: implicitWidth
         height: implicitHeight
-        source: "images/gauges/needle-normal.png"
+        source: "qrc:/images/gauges/needle-normal.png"
 
         transform: [
             Rotation {

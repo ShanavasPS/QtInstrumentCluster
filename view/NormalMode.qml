@@ -11,7 +11,7 @@ Item {
 
     Image {
         id: topLine;
-        source: "images/top-line.png";
+        source: "qrc:/images/top-line.png";
         anchors.horizontalCenter: parent.horizontalCenter;
         y: 62;
     }

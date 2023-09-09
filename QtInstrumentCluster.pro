@@ -5,11 +5,11 @@ QT += quick
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        DriveState.cpp \
-        DriveTrain.cpp \
         main.cpp \
-        mainmodel.cpp \
-        simulationcontroller.cpp
+        src/DriveState.cpp \
+        src/DriveTrain.cpp \
+        src/mainmodel.cpp \
+        src/simulationcontroller.cpp
 
 RESOURCES += qml.qrc
 
@@ -30,8 +30,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    DriveState.h \
-    DriveTrain.h \
-    mainmodel.h \
-    mathutils.h \
-    simulationcontroller.h
+    src/DriveState.h \
+    src/DriveTrain.h \
+    src/mainmodel.h \
+    src/mathutils.h \
+    src/simulationcontroller.h

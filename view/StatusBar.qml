@@ -76,7 +76,7 @@ Item {
         anchors.bottom: parent.bottom;
         anchors.bottomMargin: 27;
         x: 534;
-        image: "images/status/fuel.png";
+        image: "qrc:/images/status/fuel.png";
         emptyText: "R";
         value: MainModel.fuelLevel;
     }
@@ -85,7 +85,7 @@ Item {
         anchors.bottom: parent.bottom;
         anchors.bottomMargin: 27;
         x: 660;
-        image: "images/status/battery.png";
+        image: "qrc:/images/status/battery.png";
         emptyText: "E";
         value: MainModel.batteryLevel;
     }

@@ -4,7 +4,7 @@ Item {
     Image {
         id: bg
         anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; }
-        source: "images/bg-mask.png"
+        source: "qrc:/images/bg-mask.png"
 
         transform: Scale {
             origin.x: bg.implicitWidth / 2
@@ -15,7 +15,7 @@ Item {
     Image {
         id: highlights
         anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; }
-        source: "images/car-highlights.png"
+        source: "qrc:/images/car-highlights.png"
 
         transform: Scale {
             origin.x: highlights.implicitWidth / 2

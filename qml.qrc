@@ -4,12 +4,9 @@
         <file>images/top-line.png</file>
         <file>images/gauges/gauge-frame.png</file>
         <file>images/gauges/highlight-normal.png</file>
-        <file>Gauge.qml</file>
         <file>images/gauges/needle-normal.png</file>
         <file>images/bg-mask.png</file>
         <file>images/car-highlights.png</file>
-        <file>TellTales.qml</file>
-        <file>TellTalesIndicator.qml</file>
         <file>images/telltales/airbag.png</file>
         <file>images/telltales/beam.png</file>
         <file>images/telltales/high-beams.png</file>
@@ -18,36 +15,39 @@
         <file>images/telltales/turn_left.png</file>
         <file>images/telltales/turn_right.png</file>
         <file>models/TellTalesModel.qml</file>
-        <file>LinearGauge.qml</file>
         <file>images/status/battery.png</file>
         <file>images/status/fuel.png</file>
         <file>models/MainModel.qml</file>
         <file>models/Style.qml</file>
         <file>models/Units.qml</file>
         <file>models/SpeedLimitValues.qml</file>
-        <file>NormalMode.qml</file>
-        <file>StatusBar.qml</file>
-        <file>Car.qml</file>
-        <file>LaneAssistWhiteLine.qml</file>
         <file>images/lanes/white-line-left.png</file>
         <file>images/lanes/white-line-right.png</file>
-        <file>LaneAssist.qml</file>
         <file>images/lanes/red-border-left.png</file>
         <file>images/lanes/red-border-right.png</file>
-        <file>Menu.qml</file>
         <file>images/menu/navi.png</file>
         <file>images/menu/phone.png</file>
         <file>images/menu/play.png</file>
         <file>images/menu/setup.png</file>
         <file>models/NormalModeModel.qml</file>
-        <file>BaseGauge.qml</file>
-        <file>MediaPlayer.qml</file>
-        <file>NormalModeContentItem.qml</file>
         <file>images/albums/ak.png</file>
         <file>images/albums/juno.png</file>
         <file>images/albums/phazz.png</file>
         <file>images/albums/thievery-corp.png</file>
         <file>images/albums/tycho.png</file>
         <file>models/MediaPlayerModel.qml</file>
+        <file>view/BaseGauge.qml</file>
+        <file>view/Car.qml</file>
+        <file>view/Gauge.qml</file>
+        <file>view/LaneAssist.qml</file>
+        <file>view/LaneAssistWhiteLine.qml</file>
+        <file>view/LinearGauge.qml</file>
+        <file>view/MediaPlayer.qml</file>
+        <file>view/Menu.qml</file>
+        <file>view/NormalMode.qml</file>
+        <file>view/NormalModeContentItem.qml</file>
+        <file>view/StatusBar.qml</file>
+        <file>view/TellTales.qml</file>
+        <file>view/TellTalesIndicator.qml</file>
     </qresource>
 </RCC>

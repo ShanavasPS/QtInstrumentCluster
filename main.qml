@@ -4,6 +4,7 @@ import QtQuick.Window 2.12
 import MainModel 1.0
 import SimulationController 1.0
 import MediaPlayerModel 1.0
+import "view" as View
 
 Window {
     id: window;
@@ -19,21 +20,21 @@ Window {
 
         color: "#00091a"
 
-        TellTales {
+        View.TellTales {
             anchors.horizontalCenter: parent.horizontalCenter;
             y:16;
         }
 
-        Car {
+        View.Car {
             anchors.fill: parent;
         }
 
-        NormalMode {
+        View.NormalMode {
             id: normalMode;
             anchors.fill: parent;
         }
 
-        StatusBar {
+        View.StatusBar {
             anchors.fill: parent;
         }
 

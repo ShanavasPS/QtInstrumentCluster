@@ -13,8 +13,8 @@ Image {
     // line animation
     property real s: 0.1 + t * t * 1.9
 
-    source: location == LaneAssistWhiteLine.Left ? "images/lanes/white-line-left.png"
-                                                 : "images/lanes/white-line-right.png"
+    source: location == LaneAssistWhiteLine.Left ? "qrc:/images/lanes/white-line-left.png"
+                                                 : "qrc:/images/lanes/white-line-right.png"
 
     x: location == LaneAssistWhiteLine.Left ? 326 : 454
     y: 386

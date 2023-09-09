@@ -7,10 +7,10 @@ Row {
     id: menu;
     Repeater {
         model: ListModel {
-            ListElement { text: "Play"; image: "images/menu/play.png"}
-            ListElement { text: "Navi"; image: "images/menu/navi.png"}
-            ListElement { text: "Phone"; image: "images/menu/phone.png"}
-            ListElement { text: "Setup"; image: "images/menu/setup.png"}
+            ListElement { text: "Play"; image: "qrc:/images/menu/play.png"}
+            ListElement { text: "Navi"; image: "qrc:/images/menu/navi.png"}
+            ListElement { text: "Phone"; image: "qrc:/images/menu/phone.png"}
+            ListElement { text: "Setup"; image: "qrc:/images/menu/setup.png"}
         }
         delegate: Item {
             width: 47;

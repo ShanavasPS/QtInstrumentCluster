@@ -10,7 +10,7 @@ Item {
     Image {
         id: leftLaneAssist
 
-        source: "images/lanes/red-border-left.png"
+        source: "qrc:/images/lanes/red-border-left.png"
         opacity: redBorderOpacity
         x: 306
         y: 280
@@ -29,7 +29,7 @@ Item {
     Image {
         id: rightLaneAssist
 
-        source: "images/lanes/red-border-right.png"
+        source: "qrc:/images/lanes/red-border-right.png"
         opacity: redBorderOpacity
         x: 424
         y: 280

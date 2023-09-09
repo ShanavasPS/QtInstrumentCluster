@@ -7,7 +7,7 @@ Row {
 
     TellTalesIndicator
     {
-        source: "images/telltales/turn_left.png";
+        source: "qrc:/images/telltales/turn_left.png";
         activeColor: Style.highlighterGreen;
         active: TellTalesModel.turnLeftActive;
         indicatorOpacity: TellTalesModel.indicatorOpacity;
@@ -15,42 +15,42 @@ Row {
     }
     TellTalesIndicator
     {
-        source: "images/telltales/beam.png";
+        source: "qrc:/images/telltales/beam.png";
         activeColor: Style.highlighterGreen;
         active: TellTalesModel.beamActive;
         indicatorOpacity: TellTalesModel.indicatorOpacity;
     }
     TellTalesIndicator
     {
-        source: "images/telltales/high-beams.png";
+        source: "qrc:/images/telltales/high-beams.png";
         activeColor: Style.brightBlue;
         active: TellTalesModel.highBeamsActive;
         indicatorOpacity: TellTalesModel.indicatorOpacity;
     }
     TellTalesIndicator
     {
-        source: "images/telltales/ready.png";
+        source: "qrc:/images/telltales/ready.png";
         activeColor: Style.highlighterGreen;
         active: true;
         indicatorOpacity: TellTalesModel.qtLogoOpacity;
     }
     TellTalesIndicator
     {
-        source: "images/telltales/parked.png";
+        source: "qrc:/images/telltales/parked.png";
         activeColor: Style.highlighterRed;
         active: TellTalesModel.parkedActive;
         indicatorOpacity: TellTalesModel.indicatorOpacity;
     }
     TellTalesIndicator
     {
-        source: "images/telltales/airbag.png";
+        source: "qrc:/images/telltales/airbag.png";
         activeColor: Style.highlighterRed;
         active: TellTalesModel.airbagActive;
         indicatorOpacity: TellTalesModel.indicatorOpacity;
     }
     TellTalesIndicator
     {
-        source: "images/telltales/turn_right.png";
+        source: "qrc:/images/telltales/turn_right.png";
         activeColor: Style.highlighterGreen;
         active: TellTalesModel.turnRightActive;
         indicatorOpacity: TellTalesModel.indicatorOpacity;

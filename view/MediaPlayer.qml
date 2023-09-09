@@ -10,27 +10,27 @@ NormalModeContentItem {
             ListElement {
                 artist: "Thomas Lammer";
                 song: "Setsuna";
-                cover: "images/albums/juno.png";
+                cover: "qrc:/images/albums/juno.png";
             }
             ListElement {
                 artist: "Thievery Corporation";
                 song: "Le Monde";
-                cover: "images/albums/thievery-corp.png";
+                cover: "qrc:/images/albums/thievery-corp.png";
             }
             ListElement {
                 artist: "Tycho";
                 song: "Aweke";
-                cover: "images/albums/tycho.png";
+                cover: "qrc:/images/albums/tycho.png";
             }
             ListElement {
                 artist: "De Phazz";
                 song: "Chocolate";
-                cover: "images/albums/phazz.png";
+                cover: "qrc:/images/albums/phazz.png";
             }
             ListElement {
                 artist: "AK";
                 song: "Discovery";
-                cover: "images/albums/ak.png";
+                cover: "qrc:/images/albums/ak.png";
             }
         }
 

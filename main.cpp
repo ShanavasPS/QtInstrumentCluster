@@ -4,9 +4,9 @@
 #include <QLocale>
 #include <QTranslator>
 
-#include "simulationcontroller.h"
-#include "DriveTrain.h"
-#include "mainmodel.h"
+#include "src/simulationcontroller.h"
+#include "src/DriveTrain.h"
+#include "src/mainmodel.h"
 
 int main(int argc, char *argv[])
 {
