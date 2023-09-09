@@ -10,6 +10,7 @@ SimulationController::SimulationController(QObject *parent) : QObject(parent)
 
 void SimulationController::onTimerTimeout() {
     driveState.onUpdate(500);
+    update();
 }
 
 void SimulationController::start()
@@ -25,4 +26,5 @@ void SimulationController::update()
     mainModel->setSpeed(data.speed);
     mainModel->setOdo(data.odo);
     mainModel->setRange(data.range);
+    emit driveUpdated();
 }

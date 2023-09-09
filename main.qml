@@ -42,14 +42,8 @@ Window {
 
         SimulationController {
             id: simulationController
-        }
 
-        Timer {
-            interval: 500
-            running: true
-            repeat: true
-            onTriggered: {
-                simulationController.update();
+            onDriveUpdated: {
                 TellTalesModel.qtLogoOpacity = 0
                 MainModel.speed = MainModelData.speed
                 MainModel.rpm = MainModelData.rpm
@@ -73,6 +67,4 @@ Window {
             TellTalesModel.qtLogoOpacity = 1
         }
     }
-
-
 }

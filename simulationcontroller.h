@@ -17,7 +17,7 @@ public slots:
     void onTimerTimeout();
 
 signals:
-    void speedChanged();
+    void driveUpdated();
 
 private:
     void randomizeAccChange();

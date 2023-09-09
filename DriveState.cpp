@@ -4,12 +4,10 @@
 #include <cmath>
 #include <cstdint>
 #include "mathutils.h"
-#include "qdebug.h"
 
 namespace CommonDriveConstants {
 const uint16_t DelayDriveAfterModeChange = 1500;
 const float AcceChangeFilteringFactor = 0.15f;
-const uint8_t StateUpdatePeriod = 100;
 } // namespace CommonDriveConstants
 
 namespace NormalDriveConstants {
@@ -18,7 +16,6 @@ const float AccChangeMin = -0.1f;
 const float AccChangeMax = 1.0f;
 const float AccMin = -0.3f;
 const float AccMax = 0.4f;
-const float AccInitial = AccMax;
 const float AccChangeSpeedFactor = 10000.f;
 const uint8_t DefaultSpeedLimit = 160;
 const uint8_t ExcessiveSpeedingThreshold = 50;

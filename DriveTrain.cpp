@@ -19,7 +19,6 @@
 **
 ******************************************************************************/
 #include "DriveTrain.h"
-#include "qdebug.h"
 #include <assert.h>
 #include <algorithm>
 #include <cmath>
