@@ -46,13 +46,24 @@ Window {
                 MediaPlayerModel.nextSong()
             } else if (key === Qt.Key_Left) {
                 MediaPlayerModel.previousSong()
+            } else if (key === Qt.Key_Space) {
+                updateSimulationState()
             }
+        }
+
+        function updateSimulationState() {
+            if(MainModel.simulationRunning) {
+                simulationController.stop()
+            } else {
+                simulationController.start()
+            }
+            MainModel.simulationRunning = !MainModel.simulationRunning;
         }
 
         Keys.onPressed: (event)=> { onKeyPressed(event.key) }
 
         Component.onCompleted: {
-            simulationController.start()
+            updateSimulationState()
         }
     }
 }

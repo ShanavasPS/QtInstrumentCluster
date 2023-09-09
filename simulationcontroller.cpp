@@ -17,6 +17,11 @@ void SimulationController::start()
     timer->start(500);
 }
 
+void SimulationController::stop()
+{
+    timer->stop();
+}
+
 void SimulationController::update()
 {
     const Drivetrain::DriveData &data = driveState.drivetrain.getDriveData();

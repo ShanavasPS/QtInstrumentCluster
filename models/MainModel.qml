@@ -11,6 +11,7 @@ QtObject {
     property int clusterMode: MainModel.ModeNormal
     property bool introSequenceStarted: false
     property bool introSequenceCompleted: false
+    property bool simulationRunning: false
 
     property int speedLimitWarning: SpeedLimitValues.Slow
     readonly property int initialOdo: 300
