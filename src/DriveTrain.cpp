@@ -22,6 +22,7 @@
 #include <assert.h>
 #include <algorithm>
 #include <cmath>
+#include "mainmodel.h"
 
 namespace {
 const float cmPerMinuteToKmhRatio = 0.0006;
@@ -46,6 +47,7 @@ void Drivetrain::update(uint32_t tick, float acceleration)
     updateBattery(tick, acceleration);
     updateFuelLevel();
     updateCoolantTemp(tick, acceleration);
+    updateModel();
 }
 
 void Drivetrain::applySpeedLimit()
@@ -195,4 +197,11 @@ float Drivetrain::getRpm(float speed, int gear) const
         return 0;
     }
     return (speed * _config.gearRatios[gear] * _config.diffRatio) / (_config.tireCircumference * cmPerMinuteToKmhRatio);
+}
+
+void Drivetrain::updateModel()
+{
+    const DriveData &data = getDriveData();
+    MainModel* mainModel = MainModel::instance();
+    mainModel->update(data);
 }

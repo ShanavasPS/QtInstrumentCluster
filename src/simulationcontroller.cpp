@@ -1,5 +1,4 @@
 #include "simulationcontroller.h"
-#include "mainmodel.h"
 
 SimulationController::SimulationController(QObject *parent) : QObject(parent)
 {
@@ -9,7 +8,6 @@ SimulationController::SimulationController(QObject *parent) : QObject(parent)
 
 void SimulationController::onTimerTimeout() {
     driveState.onUpdate(500);
-    update();
 }
 
 void SimulationController::start()
@@ -20,11 +18,4 @@ void SimulationController::start()
 void SimulationController::stop()
 {
     timer->stop();
-}
-
-void SimulationController::update()
-{
-    const Drivetrain::DriveData &data = driveState.drivetrain.getDriveData();
-    MainModel* mainModel = MainModel::instance();
-    mainModel->update(data);
 }

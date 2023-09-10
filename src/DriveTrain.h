@@ -96,6 +96,7 @@ private:
     void updateFuelLevel();
     void updateCoolantTemp(uint32_t tick, float acceleration);
     void shiftGear(int delta);
+    void updateModel();
 
     DriveData _data;
     const Config     _config = {

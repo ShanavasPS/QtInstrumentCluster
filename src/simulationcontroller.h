@@ -10,7 +10,6 @@ struct SimulationController : public QObject
     Q_OBJECT
 public:
     explicit SimulationController(QObject *parent = nullptr);
-    void update();
 
 public slots:
     void start();
